@@ -1,2 +1,7 @@
 crear-estructura.sh
 .idea
+# Ignorar directorios de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+
