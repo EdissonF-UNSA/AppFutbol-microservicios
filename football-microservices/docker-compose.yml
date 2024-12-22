@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  player-service:
+    build: ./player-service
+    ports:
+      - "8001:8000"
+    depends_on:
+      - mongo
+  team-service:
+    build: ./team-service
+    ports:
+      - "8002:8000"
+    depends_on:
+      - mongo
+  stats-service:
+    build: ./stats-service
+    ports:
+      - "8003:8000"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
